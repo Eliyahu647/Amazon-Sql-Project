@@ -1,0 +1,17 @@
+USE Master;
+GO
+  
+IF EXISTS (SELECT * FROM sys.databases WHERE name = 'Amazon_DB')
+BEGIN
+    ALTER DATABASE Amazon_DB SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE Amazon_DB;
+END;
+GO
+
+--CREATE and USE Database DataWarehouse
+
+CREATE DATABASE Amazon_DB;
+GO
+
+USE Amazon_DB;
+GO
